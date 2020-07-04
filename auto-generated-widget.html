@@ -1477,11 +1477,10 @@ cpdefine("inline:com-chilipeppr-widget-autolevel", ["chilipeppr_ready", "ThreeHe
                 }
 
                 // update matrix to show results
-                this.removeRegionFrom3d();
-                if (!this.isMatrixShowing)
-                    this.toggleShowMatrix();
-                else
-                    this.refreshProbeMatrix();
+                if (this.isMatrixShowing) {
+			this.removeRegionFrom3d();
+			this.refreshProbeMatrix();
+		}
 
                 this.doNextStep();
             }
